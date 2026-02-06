@@ -6,7 +6,7 @@
   <title>안태욱의 홈페이지</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
@@ -18,59 +18,172 @@
       font-weight: 400;
       line-height: 1.75;
       color: #2d2a26;
-      background: linear-gradient(160deg, #f5f2ed 0%, #ebe8e3 50%, #e8e5e0 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem 1.5rem;
+      background: linear-gradient(165deg, #f4f1eb 0%, #eae6df 40%, #e4e0d9 100%);
+      padding: clamp(1.5rem, 5vw, 3rem) 1.5rem 3rem;
     }
-    .card {
-      max-width: 36rem;
-      width: 100%;
-      background: rgba(255, 255, 255, 0.72);
-      backdrop-filter: blur(12px);
-      border-radius: 16px;
-      padding: clamp(2rem, 6vw, 3rem);
-      box-shadow: 0 4px 24px rgba(45, 42, 38, 0.06), 0 1px 3px rgba(45, 42, 38, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.8);
+    .wrap {
+      max-width: 40rem;
+      margin: 0 auto;
     }
-    h1 {
-      margin: 0 0 0.4em;
+    header {
+      text-align: center;
+      margin-bottom: clamp(2.5rem, 8vw, 4rem);
+      padding-top: 0.5rem;
+    }
+    .site-title {
+      margin: 0;
       font-family: "Gowun Batang", serif;
-      font-size: clamp(1.75rem, 5vw, 2.25rem);
+      font-size: clamp(1.5rem, 4.5vw, 2rem);
       font-weight: 700;
       color: #2d2a26;
       letter-spacing: -0.02em;
     }
-    .title-line {
-      width: 2.5rem;
-      height: 3px;
-      background: linear-gradient(90deg, #7a9b76, #9bb396);
-      border-radius: 2px;
-      margin-bottom: 1.75rem;
-    }
-    .intro {
-      margin: 0;
-      font-size: clamp(0.9375rem, 2.2vw, 1rem);
-      color: #4a4541;
+    .site-desc {
+      margin: 0.5rem 0 0;
+      font-size: 0.9rem;
+      color: #6b6560;
       font-weight: 400;
     }
+    .card {
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(14px);
+      border-radius: 20px;
+      padding: clamp(1.75rem, 5vw, 2.5rem);
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 24px rgba(45, 42, 38, 0.06), 0 1px 3px rgba(45, 42, 38, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.85);
+    }
+    .card:last-of-type {
+      margin-bottom: 0;
+    }
+    .section-title {
+      font-family: "Gowun Batang", serif;
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #2d2a26;
+      margin: 0 0 0.5rem;
+      letter-spacing: -0.01em;
+    }
+    .title-line {
+      width: 2rem;
+      height: 2px;
+      background: linear-gradient(90deg, #7a9b76, #9bb396);
+      border-radius: 2px;
+      margin-bottom: 1.25rem;
+    }
     .intro p {
-      margin: 0 0 1rem;
+      margin: 0 0 0.875rem;
+      font-size: 0.9375rem;
+      color: #4a4541;
     }
     .intro p:last-child {
       margin-bottom: 0;
     }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 0;
+    }
+    .tag {
+      display: inline-block;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: #5a6b57;
+      background: rgba(122, 155, 118, 0.14);
+      border-radius: 999px;
+      border: 1px solid rgba(122, 155, 118, 0.25);
+    }
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 0;
+    }
+    .link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #4a4541;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(45, 42, 38, 0.12);
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+      box-shadow: 0 1px 2px rgba(45, 42, 38, 0.04);
+    }
+    .link-btn:hover {
+      background: rgba(122, 155, 118, 0.1);
+      border-color: rgba(122, 155, 118, 0.3);
+      color: #3d523a;
+    }
+    .link-btn svg {
+      width: 1rem;
+      height: 1rem;
+      opacity: 0.8;
+    }
+    footer {
+      text-align: center;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(45, 42, 38, 0.08);
+      font-size: 0.8125rem;
+      color: #8a8580;
+    }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>안태욱의 홈페이지</h1>
-    <div class="title-line" aria-hidden="true"></div>
-    <section class="intro">
-      <p>안녕하세요, 안태욱입니다. 개발과 학습을 좋아하며, 작은 것부터 꾸준히 만들어 가는 것을 즐깁니다.</p>
-      <p>이 공간에서는 제가 하는 일과 생각을 나누고자 합니다. 방문해 주셔서 감사합니다.</p>
-    </section>
+  <div class="wrap">
+    <header>
+      <h1 class="site-title">안태욱의 홈페이지</h1>
+      <p class="site-desc">개발과 학습을 함께 나누는 공간</p>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2 class="section-title">소개</h2>
+        <div class="title-line" aria-hidden="true"></div>
+        <div class="intro">
+          <p>안녕하세요, 안태욱입니다. 소프트웨어 개발과 학습을 좋아하고, 작은 프로젝트부터 꾸준히 만들어 보며 성장하고 있습니다.</p>
+          <p>이 페이지에서는 제가 관심 있는 분야와 진행한 일, 그리고 생각을 조금씩 정리해 두었습니다. 편하게 둘러보시고, 궁금한 점이 있으시면 연락 주세요.</p>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">관심사 · 하는 일</h2>
+        <div class="title-line" aria-hidden="true"></div>
+        <ul class="tags">
+          <li class="tag">웹 개발</li>
+          <li class="tag">프론트엔드</li>
+          <li class="tag">자동화 · 도구</li>
+          <li class="tag">Git · GitHub</li>
+          <li class="tag">문서화</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">연락 · 링크</h2>
+        <div class="title-line" aria-hidden="true"></div>
+        <div class="links">
+          <a class="link-btn" href="https://github.com/taewook923" target="_blank" rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <a class="link-btn" href="mailto:your.email@example.com">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            이메일
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 안태욱. 이 페이지는 GitHub Pages로 호스팅됩니다.</p>
+    </footer>
   </div>
 </body>
 </html>
