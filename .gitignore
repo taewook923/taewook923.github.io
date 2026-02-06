@@ -1,0 +1,13 @@
+# Windows 자동 생성 파일
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# Office 임시/잠금 파일
+~$*
+
+# 기타 Windows 임시
+*.stackdump
+*.lnk
